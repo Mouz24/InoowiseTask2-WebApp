@@ -35,16 +35,6 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();
-//app.Use(async (context, next) =>
-//{
-//    var token = context.Session.GetString("Token");
-//    if (!string.IsNullOrEmpty(token))
-//    {
-//        context.Request.Headers.Add("Authorization", "Bearer " + token);
-//    }
-//    await next();
-//});
-
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
