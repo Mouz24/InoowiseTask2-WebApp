@@ -1,0 +1,58 @@
+﻿@model FridgesWebApp.Models.FridgeEntity
+
+@{
+    ViewData["Title"] = "Create Fridge";
+}
+
+<div class="text-center"><h1>Create Fridge</h1></div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Fridges" asp-action="CreateFridge">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" placeholder="Enter Name" class=" form-control" required />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner_name" class="control-label">Owner name</label>
+                <input asp-for="Owner_name" placeholder="Enter Owner name" class=" form-control" required />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NameOfModel" class="control-label">Name of Model</label>
+                <input asp-for="NameOfModel" placeholder="Enter Name of Model" class=" form-control" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" placeholder="Year" class=" form-control" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstProduct" class="control-label">Product</label>
+                @Html.DropDownList("FirstProduct", new SelectList(Enum.GetValues(typeof(ProductList))),
+                "--Select--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FirstProduct, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label asp-for="SecondProduct" class="control-label">Product</label>
+                @Html.DropDownList("SecondProduct", new SelectList(Enum.GetValues(typeof(ProductList))),
+                "--Select--", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SecondProduct, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+
+<div>
+     <a href="javascript:history.back()">Back to List</a>
+</div>
+
+@section Scripts
+{
+   @{
+        <partial name="_ValidationScriptsPartial" />
+   }
+}
+

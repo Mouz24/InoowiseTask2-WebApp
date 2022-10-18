@@ -1,0 +1,39 @@
+﻿@model FridgesWebApp.Models.UserEntity
+
+<script type="text/javascript">
+    document.body.style.backgroundImage = "url('../Images/authorization.jpg')";
+</script>
+
+@{
+    ViewData["Title"] = "Authorization";
+}
+
+<div class="text-center text-white"><h1>Authorization</h1></div>
+<hr />
+<div class="container">
+<div class="row">
+        <div class="col d-flex justify-content-center align-items-center">
+        <form asp-action="Authorize">
+                <img src="~/Images/Avatar.png" alt="Sample Photo" width="210" height="165" />
+                  
+            <div class="form-group text-center">
+             <label asp-for="Username" class="control-label text-white"></label>
+             <input asp-for="Username" placeholder="Enter Username" class=" form-control" style="height:45px" required />
+            </div>
+            <div class="form-group text-center">
+             <label asp-for="Password" class="control-label text-white"></label>
+             <input type="password" input asp-for="Password" placeholder="Enter Password" class=" form-control" style="height:45px" required />
+            </div>
+              <div class="form-group">
+                <input type="submit" value="Sign in" class="btn btn-primary" />
+                <div class="btn btn-primary"><a class="text-light" style="text-decoration:none" sp-controller="Authentication" asp-action="Registration">Sign up</a>
+              </div>
+
+                <div>
+                <a class="text-white" asp-controller="Home" asp-action="Index">Back Home</a>
+                 </div>
+            </div>
+        </form>
+    </div>
+ </div>     
+</div>
