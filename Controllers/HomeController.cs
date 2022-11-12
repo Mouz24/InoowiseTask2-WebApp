@@ -1,13 +1,16 @@
-﻿using FridWebApp.Models;
+﻿using FridgesWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Data;
 using System.Diagnostics;
+using System.Net.Http.Headers;
 
-namespace FridWebApp.Controllers
+namespace FridgesWebApp.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+       
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -15,6 +18,8 @@ namespace FridWebApp.Controllers
 
         public IActionResult Index()
         {
+            ViewData["isLoginVisible"] = HttpContext.Session.Get("Token") == null;
+            
             return View();
         }
 
