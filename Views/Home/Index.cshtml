@@ -1,8 +1,29 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿ <script type="text/javascript">
+    document.body.style.backgroundImage = "url('../Images/Fridges.jpg')";
+ </script>
+@{
+    ViewData["Title"] = "Welcome Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-1">Welcome, dear User. It is </h1>
+</div>
+
+<div class="text-center">
+    <h1 class="display-1">a Web app for firdges management.</h1>
+</div>
+
+<div class="text-center">
+    <br />
+    <br />
+    <h1 class="display-3">A list of pages:</h1>
+</div>
+
+<div class="text-center">
+    <h3>
+        <a  class="text-dark" style="text-decoration:underline" href="https://localhost:7261/Fridges/GetFridges">Fridges List </a>
+    </h3>
+    <h3>
+        <a class="text-dark" style="text-decoration:underline" href="https://localhost:7261/Fridges/FillFridgesWithDefaultQuantity">Fill Missing Products With Default Quantity </a>
+    </h3>
 </div>
